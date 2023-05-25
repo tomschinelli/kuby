@@ -19,32 +19,19 @@ with kubernetes, you have to learn the basic and work with kubectl, or one of th
 ToDo
 
 
+### Setup Cluster 
+todo
+
 ### Completion
 It should work like [the completion for kubectl](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-autocomplete), since I use the same packages to achieve it.
 
-#### BASH
-```shell
-source <(kuby completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first.
-echo "source <(kuby completion bash)" >> ~/.bashrc 
-```
-
-### ZSH
-```shell
-source <(kuby completion zsh)  # set up autocomplete in zsh into the current shell
-echo '[[ $commands[kuby] ]] && source <(kuby completion zsh)' >> ~/.zshrc # add autocomplete permanently to your zsh shell
-
-```
-
+For more information see [Completion](./docs/completion.md)
 
 ## Usage 
 
-### Get application overview
+Get application overview: 
 ```shell
-kuby get apps
+kuby overview
 ```
 
-### Accessing logs
-```shell
-kuby logs <application-name>
-```
-
+For a more detailed documentation, see the [user guide](./docs/user-guide.md)
