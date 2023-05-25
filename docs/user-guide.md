@@ -1,12 +1,12 @@
-# Kuby - User Guide
+# kummy - User Guide
 
 ## Get application overview
 ```shell
-kuby get apps
+kummy get apps
 ```
 
 ## Accessing logs
 ```shell
-kuby logs <application-name>
+kummy logs <application-name>
 ```
 

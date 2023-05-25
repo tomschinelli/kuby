@@ -1,13 +1,13 @@
-# Kuby - Kubernetes for Dummies 
+# kummy - Kubernetes for Dummies 
 
-Kuby a tool targeting developer without or little kubernetes knowledge so that they can inspect their applications.
+kummy a tool targeting developer without or little kubernetes knowledge so that they can inspect their applications.
 
 **Important Note:** [WIP] Currently not in a working state. Commands or scope may change.
 
-## What is kuby?
+## What is kummy?
 
 Learning Kubernetes is hard. If you find yourself in a Team with developers or other people, with no skills in 
-kubernetes, you can provide them with this tool. With kuby, they can handle basic operations, like viewing logs, 
+kubernetes, you can provide them with this tool. With kummy, they can handle basic operations, like viewing logs, 
 restarting pod or finding an overview on how the application is configured.
 
 ### What it isn't: 
@@ -31,7 +31,7 @@ For more information see [Completion](./docs/completion.md)
 
 Get application overview: 
 ```shell
-kuby overview
+kummy overview
 ```
 
 For a more detailed documentation, see the [user guide](./docs/user-guide.md)

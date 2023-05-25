@@ -4,21 +4,21 @@ tasks:
   build:
     desc: Build the app
     cmds:
-      - GOFLAGS=-mod=mod go build -o bin/kuby cmd/kuby/kuby.go
+      - GOFLAGS=-mod=mod go build -o bin/kummy cmd/kummy/kummy.go
 
   run:
     desc: Run the app
     cmds:
-      - GOFLAGS=-mod=mod go run cmd/kuby/kuby.go  {{.CLI_ARGS}}
+      - GOFLAGS=-mod=mod go run cmd/kummy/kummy.go  {{.CLI_ARGS}}
 
 
   install:
     desc: Install build into machine
     cmds:
       - task: build
-      - sudo cp ./bin/kuby /usr/local/bin/kuby
+      - sudo cp ./bin/kummy /usr/local/bin/kummy
 
   uninstall:
     desc: Install build into machine
     cmds:
-      - sudo rm /usr/local/bin/kuby
+      - sudo rm /usr/local/bin/kummy

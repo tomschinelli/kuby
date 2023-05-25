@@ -1,4 +1,4 @@
-module github.com/tomschinelli/kuby
+module github.com/tomschinelli/kummy
 
 go 1.20
 

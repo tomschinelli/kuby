@@ -2,18 +2,18 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/tomschinelli/kuby/pkg/cmd/overview"
+	"github.com/tomschinelli/kummy/pkg/cmd/overview"
 )
 
-func NewDefaultKubyCommand() *cobra.Command {
-	return NewKubyCommand()
+func NewDefaultKummyCommand() *cobra.Command {
+	return NewkummyCommand()
 }
 
-func NewKubyCommand() *cobra.Command {
+func NewkummyCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "kuby",
-		Short: "Kuby - kubernetes for dummies",
-		Long:  `Kuby a tool targeting developer without or little kubernetes knowledge so that they can inspect their applications.`,
+		Use:   "kummy",
+		Short: "kummy - kubernetes for dummies",
+		Long:  `kummy a tool targeting developer without or little kubernetes knowledge so that they can inspect their applications.`,
 	}
 
 	overviewCmd := overview.NewCmdOverview()
