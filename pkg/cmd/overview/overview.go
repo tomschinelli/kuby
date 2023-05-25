@@ -14,11 +14,11 @@ func NewCmdOverview() *cobra.Command {
 	return &cobra.Command{
 		Use: "overview",
 		RunE: func(cmd *cobra.Command, args []string) error {
-
-			println("overview - not implemented.")
-
 			ctx := context.Background()
-			config := ctrl.GetConfigOrDie()
+			config, err := ctrl.GetConfig()
+			if err != nil {
+				return err
+			}
 			clientset := kubernetes.NewForConfigOrDie(config)
 			namespace := "" // all namespaces
 			items, err := GetPods(clientset, ctx, namespace)

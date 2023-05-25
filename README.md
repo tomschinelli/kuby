@@ -17,11 +17,21 @@ with kubernetes, you have to learn the basic and work with kubectl, or one of th
 
 
 ## :hammer_and_wrench: Installation
-ToDo
 
+### From source
 
-### Configure 
-todo
+Run 
+```shell
+git clone https://github.com/tomschinelli/kummy.git
+cd kummy
+./install.sh
+```
+
+### Binaries
+ToDo Build pipeline
+
+### AUR
+ToDo publish package
 
 ### Completion
 It should work like [the completion for kubectl](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-autocomplete), since I use the same packages to achieve it.

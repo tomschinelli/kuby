@@ -6,12 +6,22 @@ sudo cp ./bin/kummy /usr/local/bin/kummy
 echo """
 done.
 
-Run the following command to enable completion in current session:
+To verify the installation, run
 
-  source <(kummy completion zsh)
 
-Then try run
+  kummy help
+
+
+To enable completion in current shell session, run
+
+
+  source <(kummy completion $SHELL)
+
+
+verify completion is working:
+
 
   kummy <tab><tab>
+
 
 """
