@@ -2,12 +2,11 @@
 
 kummy a tool targeting developer without or little kubernetes knowledge so that they can inspect their applications.
 
-Pun is unintended 🤔.
+No Pun intended 🤔.
 
 **Important Note:** [WIP] Currently not in a working state. Commands or scope may change.
 
-## What is kummy?
-
+## :question: What is kummy?
 Learning Kuberne tes is hard. If you find yourself in a Team with developers or other people, with no skills in 
 kubernetes, you can provide them with this tool. With kummy, they can handle basic operations, like viewing logs, 
 restarting pod or finding an overview on how the application is configured.
@@ -17,11 +16,11 @@ A replacement for [kubectl](https://kubernetes.io/de/docs/reference/kubectl/). I
 with kubernetes, you have to learn the basic and work with kubectl, or one of the other tools out there.
 
 
-## Installation
+## :hammer_and_wrench: Installation
 ToDo
 
 
-### Setup Cluster 
+### Configure 
 todo
 
 ### Completion
@@ -29,7 +28,7 @@ It should work like [the completion for kubectl](https://kubernetes.io/docs/refe
 
 For more information see [Completion](./docs/completion.md)
 
-## Usage 
+## :green_book: How to use 
 
 Get application overview: 
 ```shell
