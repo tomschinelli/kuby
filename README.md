@@ -2,11 +2,13 @@
 
 kummy a tool targeting developer without or little kubernetes knowledge so that they can inspect their applications.
 
+Pun is unintended 🤔.
+
 **Important Note:** [WIP] Currently not in a working state. Commands or scope may change.
 
 ## What is kummy?
 
-Learning Kubernetes is hard. If you find yourself in a Team with developers or other people, with no skills in 
+Learning Kuberne tes is hard. If you find yourself in a Team with developers or other people, with no skills in 
 kubernetes, you can provide them with this tool. With kummy, they can handle basic operations, like viewing logs, 
 restarting pod or finding an overview on how the application is configured.
 
