@@ -12,8 +12,8 @@ func NewDefaultKummyCommand() *cobra.Command {
 func NewkummyCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "kummy",
-		Short: "kummy - kubernetes for dummies",
-		Long:  `kummy a tool targeting developer without or little kubernetes knowledge so that they can inspect their applications.`,
+		Short: "kummy - cluster for dummies",
+		Long:  `kummy a tool targeting developer without or little cluster knowledge so that they can inspect their applications.`,
 	}
 
 	overviewCmd := overview.NewCmdOverview()

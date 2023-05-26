@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-go build -o bin/kummy cmd/kummy.go
+go build -o bin/kummy cmd//kummy/kummy.go
 sudo cp ./bin/kummy /usr/local/bin/kummy
 
 echo """

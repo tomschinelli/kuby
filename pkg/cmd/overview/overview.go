@@ -2,43 +2,36 @@ package overview
 
 import (
 	"context"
-	"fmt"
 	"github.com/spf13/cobra"
+	"github.com/tomschinelli/kummy/pkg/cluster"
+	"github.com/tomschinelli/kummy/pkg/overview"
 	v1 "k8s.io/api/core/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/client-go/kubernetes"
-	ctrl "sigs.k8s.io/controller-runtime"
 )
 
 func NewCmdOverview() *cobra.Command {
 	return &cobra.Command{
 		Use: "overview",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			ctx := context.Background()
-			config, err := ctrl.GetConfig()
+			data, err := getData()
 			if err != nil {
 				return err
 			}
-			clientset := kubernetes.NewForConfigOrDie(config)
-			namespace := "" // all namespaces
-			items, err := GetPods(clientset, ctx, namespace)
-			if err != nil {
-				return err
-			}
-			for _, item := range items {
-				fmt.Printf("%+v\n", item.Name)
-			}
+			PrintTable(data)
 			return nil
 		},
 	}
 }
-
-func GetPods(clientset *kubernetes.Clientset, ctx context.Context, namespace string) ([]v1.Pod, error) {
-
-	list, err := clientset.CoreV1().Pods(namespace).
-		List(ctx, metav1.ListOptions{})
+func getData() ([]v1.Pod, error) {
+	ctx := context.Background()
+	clst, err := cluster.NewDefault()
 	if err != nil {
 		return nil, err
 	}
-	return list.Items, nil
+
+	options := overview.NewDefaultOptions()
+	options.AllNamespace = true
+	o := overview.New(clst, options)
+
+	return o.Get(ctx)
+
 }
