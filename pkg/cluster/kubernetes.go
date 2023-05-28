@@ -6,22 +6,24 @@ import (
 )
 
 type Cluster struct {
+	err       error
 	clientset *kubernetes.Clientset
 }
 
-func New(config *rest.Config) (*Cluster, error) {
+func New(config *rest.Config) *Cluster {
+	cluster := &Cluster{}
 
 	clientset, err := kubernetes.NewForConfig(config)
-	cluster := &Cluster{
-		clientset: clientset,
-	}
-	return cluster, err
+	cluster.clientset = clientset
+	cluster.err = err
+
+	return cluster
 }
 
-func NewDefault() (*Cluster, error) {
+func NewDefault() *Cluster {
 	config, err := NewAutoConfig()
 	if err != nil {
-		return nil, err
+		return &Cluster{err: err}
 	}
 	return New(config)
 }
