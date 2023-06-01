@@ -3,6 +3,7 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 	"github.com/tomschinelli/kummy/pkg/cmd/get"
+	"github.com/tomschinelli/kummy/pkg/cmd/logs"
 	"github.com/tomschinelli/kummy/pkg/cmd/overview"
 )
 
@@ -23,6 +24,7 @@ func NewkummyCommand() *cobra.Command {
 
 	cmd.AddCommand(overview.NewCmdOverview())
 	cmd.AddCommand(get.NewCmdGet())
+	cmd.AddCommand(logs.NewCmdLogs())
 
 	cmd.PersistentFlags().StringVarP(&Namespace, "namespace", "n", "default", "Target Namespace")
 

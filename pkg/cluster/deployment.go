@@ -6,7 +6,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func (c *Cluster) GetDeployments(ctx context.Context, namespace string) ([]v1.Deployment, error) {
+func (c *Cluster) Deployments(ctx context.Context, namespace string) ([]v1.Deployment, error) {
 	if c.err != nil {
 		return nil, c.err
 	}
@@ -16,4 +16,11 @@ func (c *Cluster) GetDeployments(ctx context.Context, namespace string) ([]v1.De
 	}
 	return list.Items, nil
 
+}
+
+func (c *Cluster) Deployment(ctx context.Context, namespace string, name string) (*v1.Deployment, error) {
+	if c.err != nil {
+		return nil, c.err
+	}
+	return c.clientset.AppsV1().Deployments(namespace).Get(ctx, name, metav1.GetOptions{})
 }

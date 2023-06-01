@@ -26,7 +26,7 @@ func listSimplified(config *Config) ([]v1.Deployment, error) {
 	if config.err != nil {
 		return nil, config.err
 	}
-	deployments, err := config.cluster.GetDeployments(config.ctx, "")
+	deployments, err := config.cluster.Deployments(config.ctx, "")
 	if err != nil {
 		return nil, err
 	}
